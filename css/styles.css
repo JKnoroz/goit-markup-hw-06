@@ -546,6 +546,7 @@ footer {
 .bottom {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 footer .logo {
@@ -574,7 +575,8 @@ address p {
   margin-right: 70px;
 }
 
-.subscribe p {
+.subscribe p,
+.sendmail b {
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
@@ -620,6 +622,17 @@ address p {
 
 .subscribe li:not(:last-child) {
   margin-right: 10px;
+}
+
+.subform input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
+  background-color: rgba(33, 150, 243, 0);
+  padding: 15px;
+  margin-right: 12px;
 }
 
 /* Модальное окно */
@@ -697,7 +710,12 @@ address p {
   margin-top: 0px;
 }
 
-.modal textarea {
+.modal #comment {
+  padding: 12px 16px;
+  height: 120px;
+}
+
+.modal textarea::placeholder {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
@@ -726,4 +744,28 @@ address p {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.policy {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.submit {
+  font-weight: 700px;
+  font-size: 16px;
+  line-height: 1.875;
+  display: block;
+  align-items: center;
+  text-align: center;
+
+  padding: 10px;
+  min-width: 200px;
+  background-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+  border-radius: 4px;
+
+  cursor: pointer;
 }
