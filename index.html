@@ -304,20 +304,34 @@
         <p>Оставьте свои данные, мы вам перезвоним</p>
         <form class="mform">
           <div class="mform-field">
-          <label for="name">Имя</label>
-          <input type="text" name="name" id="name"/></div>
+            <label for="name">Имя</label>
+            <input type="text" name="name" id="name" autofocus />
+            <svg class="mform-icon"><use href="./images/sprite.svg#icon-person"></use></svg>
+        </div>
           <div class="mform-field">
           <label for="tel">Телефон</label>
-          <input type="tel" name="tel" id="tel" /></div>
+          <input type="tel" name="tel" id="tel" />
+          <svg class="mform-icon">
+            <use href="./images/sprite.svg#icon-phone-black"></use>
+          </svg>
+        </div>
           <div class="mform-field">
           <label for="mail">Почта</label>
-          <input type="email" name="mail" id="mail" /></div>
+          <input type="email" name="mail" id="mail" />
+          <svg class="mform-icon">
+            <use href="./images/sprite.svg#icon-email-black"></use>
+          </svg>
+        </div>
           <div class="mform-field">
           <label for="comment">Комментарий</label>
           <textarea name="comment" id="comment" rows="8" placeholder="Введите текст"/></textarea></div>
           <div class="policy">
-            <input type="checkbox" name="checkbox" id="checkbox"/>
-          <label for="checkbox">Соглашаюсь с рассылкой и принимаю Условия договора</label></div>
+            <label class="label">
+            <input class="checkbox" type="checkbox" name="checkbox" value="Соглашаюсь"/>
+            <span class="icon"></span>
+            Соглашаюсь с рассылкой и принимаю Условия договора
+            </label>
+          </div>
           <button class="submit" type="submit">Отправить</button>
         </form>
       </a>

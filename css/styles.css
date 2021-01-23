@@ -635,6 +635,20 @@ address p {
   margin-right: 12px;
 }
 
+.subform button {
+  border-color: transparent;
+}
+
+.subform button::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/icon-send.svg);
+  background-size: contain;
+  margin-left: 10px;
+}
+
 /* Модальное окно */
 
 .backdrop {
@@ -689,6 +703,11 @@ address p {
   height: 30px;
 }
 
+.modal-button:hover,
+.modal-button:focus {
+  fill: var(--accent-color);
+}
+
 .mform {
   font-weight: 400px;
   font-size: 12px;
@@ -727,6 +746,7 @@ address p {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .mform-field input,
@@ -738,6 +758,26 @@ address p {
 
 .mform-field label {
   margin-bottom: 4px;
+}
+
+.mform-icon {
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+
+  display: inline-block;
+
+  width: 18px;
+  height: 18px;
+}
+
+.mform-field input:hover ~ .mform-icon {
+  fill: var(--accent-color);
+}
+
+.mform-field input:hover,
+.mform-field textarea:hover {
+  border-color: var(--accent-color);
 }
 
 .policy label {
@@ -752,9 +792,44 @@ address p {
   margin-top: 20px;
 }
 
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.checkbox:checked + .icon {
+  background-color: var(--accent-color);
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-color);
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .submit {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 16px;
+  letter-spacing: 0.06em;
   line-height: 1.875;
   display: block;
   align-items: center;
@@ -763,9 +838,13 @@ address p {
   padding: 10px;
   min-width: 200px;
   background-color: #188ce8;
+  color: var(--white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: 2px solid transparent;
   border-radius: 4px;
+
+  margin-left: auto;
+  margin-right: auto;
 
   cursor: pointer;
 }
