@@ -289,7 +289,10 @@
         <div class="subform">
         <form action="">
           <input type="email" placeholder="E-mail"/>
-          <button class="button" type="submit">Подписаться</button>
+          <button class="button" type="submit">
+            <span>Подписаться</span>
+            <span class="icon-send"></span>
+          </button>
         </form>
         </div>
       </div>
@@ -300,41 +303,46 @@
         <a href="" data-modal-close>
         <svg class="modal-button">
           <use href="./images/sprite.svg#icon-Vector"></use>
-        </svg>
+        </svg></a>
         <p>Оставьте свои данные, мы вам перезвоним</p>
         <form class="mform">
           <div class="mform-field">
             <label for="name">Имя</label>
+            <div class="input-field">
             <input type="text" name="name" id="name" autofocus />
             <svg class="mform-icon"><use href="./images/sprite.svg#icon-person"></use></svg>
-        </div>
+            </div>
+          </div>
           <div class="mform-field">
           <label for="tel">Телефон</label>
+          <div class="input-field">
           <input type="tel" name="tel" id="tel" />
           <svg class="mform-icon">
             <use href="./images/sprite.svg#icon-phone-black"></use>
-          </svg>
+          </svg></div>
         </div>
           <div class="mform-field">
           <label for="mail">Почта</label>
+          <div class="input-field">
           <input type="email" name="mail" id="mail" />
+          
           <svg class="mform-icon">
             <use href="./images/sprite.svg#icon-email-black"></use>
-          </svg>
+          </svg></div>
         </div>
           <div class="mform-field">
           <label for="comment">Комментарий</label>
           <textarea name="comment" id="comment" rows="8" placeholder="Введите текст"/></textarea></div>
           <div class="policy">
             <label class="label">
-            <input class="checkbox" type="checkbox" name="checkbox" value="Соглашаюсь"/>
+            <input class="checkbox visually-hidden" type="checkbox" name="checkbox" value="Соглашаюсь"/>
             <span class="icon"></span>
-            Соглашаюсь с рассылкой и принимаю Условия договора
+            <span class="policy-text">Соглашаюсь с рассылкой и принимаю <a class="policy-treaty" href="">Условия договора</a></span>
             </label>
           </div>
           <button class="submit" type="submit">Отправить</button>
         </form>
-      </a>
+      
       </div>
     </div>
     <script src="./js/modal.js"></script>

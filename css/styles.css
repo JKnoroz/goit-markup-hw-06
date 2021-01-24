@@ -572,7 +572,7 @@ address p {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
-  margin-right: 70px;
+  /* margin-right: 70px; */
 }
 
 .subscribe p,
@@ -624,6 +624,10 @@ address p {
   margin-right: 10px;
 }
 
+.subform {
+  display: inline-flex;
+}
+
 .subform input {
   width: 358px;
   height: 50px;
@@ -633,20 +637,21 @@ address p {
   background-color: rgba(33, 150, 243, 0);
   padding: 15px;
   margin-right: 12px;
+  color: var(--white-color);
 }
 
 .subform button {
   border-color: transparent;
 }
 
-.subform button::after {
-  content: '';
+.icon-send {
   display: inline-block;
+  background-image: url(../images/icon-send.svg);
   width: 24px;
   height: 24px;
-  background-image: url(../images/icon-send.svg);
-  background-size: contain;
-  margin-left: 10px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(25%);
 }
 
 /* Модальное окно */
@@ -701,6 +706,8 @@ address p {
 
   width: 30px;
   height: 30px;
+
+  transition: fill 250ms var(--transit);
 }
 
 .modal-button:hover,
@@ -708,8 +715,8 @@ address p {
   fill: var(--accent-color);
 }
 
-.mform {
-  font-weight: 400px;
+.mform label {
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
@@ -746,7 +753,6 @@ address p {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  position: relative;
 }
 
 .mform-field input,
@@ -754,16 +760,28 @@ address p {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 11px;
+  width: 100%;
+}
+
+.mform-field input {
+  padding-left: 42px;
+
+  transition: border-color 250ms var(--transit), fill 250ms var(--transit);
 }
 
 .mform-field label {
   margin-bottom: 4px;
 }
 
+.input-field {
+  position: relative;
+}
+
 .mform-icon {
   position: absolute;
   left: 12px;
-  bottom: 11px;
+  top: 50%;
+  transform: translateY(-50%);
 
   display: inline-block;
 
@@ -771,23 +789,37 @@ address p {
   height: 18px;
 }
 
-.mform-field input:hover ~ .mform-icon {
+.mform-field input:hover ~ .mform-icon,
+.mform-field input:focus ~ .mform-icon {
   fill: var(--accent-color);
 }
 
 .mform-field input:hover,
-.mform-field textarea:hover {
+.mform-field textarea:hover,
+.mform-field input:focus,
+.mform-field textarea:focus {
   border-color: var(--accent-color);
+  outline: none;
 }
 
-.policy label {
+.policy-text,
+.policy-treaty {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
+.policy-treaty {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  margin-left: 3px;
+}
+
 .policy {
-  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
   margin-bottom: 30px;
   margin-top: 20px;
 }
@@ -805,6 +837,9 @@ address p {
   border: 2px solid #212121;
   border-radius: 3px;
   margin-right: 8px;
+
+  transition: background-color 250ms var(--transit),
+    border-color 250ms var(--transit);
 }
 
 .checkbox:checked + .icon {
@@ -815,24 +850,12 @@ address p {
   border-color: var(--accent-color);
 }
 
-.checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .submit {
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.06em;
   line-height: 1.875;
   display: block;
-  align-items: center;
   text-align: center;
 
   padding: 10px;
