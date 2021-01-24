@@ -200,12 +200,16 @@ h1 {
 .button {
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.87;
   letter-spacing: 0.06em;
   color: var(--white-color);
   background-color: var(--accent-color);
   border-radius: 4px;
-  padding: 10px 32px;
+  min-width: 200px;
+  height: 50px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
   display: inline-block;
   cursor: pointer;
 }
@@ -642,6 +646,9 @@ address p {
 
 .subform button {
   border-color: transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon-send {
@@ -649,9 +656,8 @@ address p {
   background-image: url(../images/icon-send.svg);
   width: 24px;
   height: 24px;
-  top: 50%;
-  left: 10px;
-  transform: translateY(25%);
+  margin-left: 10px;
+  fill: #fff;
 }
 
 /* Модальное окно */
@@ -724,7 +730,7 @@ address p {
 }
 
 .modal p {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
@@ -752,6 +758,9 @@ address p {
 .mform-field {
   display: flex;
   flex-direction: column;
+}
+
+.mform .mform-field:not(:nth-child(4)) {
   margin-bottom: 10px;
 }
 
@@ -759,7 +768,7 @@ address p {
 .mform-field textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  padding: 11px;
+  padding: 10px;
   width: 100%;
 }
 
@@ -813,7 +822,7 @@ address p {
   color: var(--accent-color);
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  margin-left: 3px;
+  margin-left: 0, 03em;
 }
 
 .policy {
@@ -830,23 +839,36 @@ address p {
   justify-content: center;
 }
 
-.icon {
-  display: inline-block;
+.policy-text::before {
+  content: '';
+  display: block;
   width: 16px;
   height: 15px;
   border: 2px solid #212121;
   border-radius: 3px;
-  margin-right: 8px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 
   transition: background-color 250ms var(--transit),
     border-color 250ms var(--transit);
 }
 
-.checkbox:checked + .icon {
+.policy-text {
+  position: relative;
+  padding-left: 23px;
+}
+
+.checkbox:checked + .policy-text::before {
   background-color: var(--accent-color);
   background-image: url(../images/icon-check.svg);
   background-size: contain;
   background-origin: border-box;
+  border-color: var(--accent-color);
+}
+
+.checkbox:focus + .policy-text::before {
   border-color: var(--accent-color);
 }
 
@@ -858,7 +880,7 @@ address p {
   display: block;
   text-align: center;
 
-  padding: 10px;
+  padding: 8px;
   min-width: 200px;
   background-color: #188ce8;
   color: var(--white-color);
