@@ -652,12 +652,13 @@ address p {
 }
 
 .icon-send {
-  display: inline-block;
-  background-image: url(../images/icon-send.svg);
+  margin-left: 10px;
+}
+
+.icon-send svg {
+  display: block;
   width: 24px;
   height: 24px;
-  margin-left: 10px;
-  fill: #fff;
 }
 
 /* Модальное окно */
